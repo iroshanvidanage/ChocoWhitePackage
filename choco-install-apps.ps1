@@ -5,11 +5,9 @@
 
 $packagesBasic = @{
 # --- Basics ---
-    '7zip'='';
+    'bandizip'='';
     notepadplusplus=''; 
-    vlc=''; 
-    irfanview='';
-    irfanviewplugins='';
+    potplayer=''; 
     adobereader='--params="/UpdateMode:4"';
     #foxitreader='--ia="/MERGETASKS=!desktopicon,!displayinbrowser /COMPONENTS=*pdfviewer,*ffse,*installprint,!ffaddin,*ffspellcheck,!connectedpdf.!installprint\wordaddin,!installprint\pptaddin,!installprint\exceladdin /DIR=D:\Programme\choco\foxitreader"';
 
@@ -28,15 +26,9 @@ $packagesBasic = @{
     #discord='';
 
 # --- System administration ---
-    chocolateygui='';    
-    windirstat='';
-    teamviewer='';
-    'cpu-z.install'='';
-    'freecommander-xe.install'='';
+    #chocolateygui='';    
+    #windirstat='';
 
-# --- Crypto ---
-    keepass='';
-    #veracrypt='';
 } 
 
 
@@ -45,21 +37,14 @@ $packagesDev = @{
 # --- General ---
     vscode='--params="/NoDesktopIcon /NoQuicklaunchIcon"';
     git='';
-    'github-desktop'='';
-    sourcetree='';
 
 # --- API Clients ---
     postman='';
-    'insomnia-rest-api-client'='';
 
 # --- Cloud ---
     #'azure-cli'='';
     #'aws-vault'='';
 
-# --- Languages ---
-    miniconda3='--params="/InstallationType:JustMe /AddToPath:1 /RegisterPython:1"'; 
-    #'nodejs.install'='';
-    #'dotnetcore-sdk'='';   
 }
 # --------------------------------------------------------------
 
@@ -67,8 +52,8 @@ $packagesDev = @{
 
 
 # --------------------- Script start ---------------------------
-Write-Host "`n --- The CHOCO VANILLA PACKAGE --- " -ForegroundColor black -BackgroundColor white
-Write-Host "https://github.com/vii33/ChocoVanillaPackage `n" -ForegroundColor green
+Write-Host "`n --- The CHOCO WHITE PACKAGE --- " -ForegroundColor black -BackgroundColor white
+Write-Host "https://github.com/ShehanBrendon/ChocoWhitePackage `n" -ForegroundColor green
 
 $Break = $False
 Do{
