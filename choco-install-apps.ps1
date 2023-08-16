@@ -5,7 +5,7 @@
 
 $packagesBasic = @{
 # --- Basics ---
-    'bandizip'='';
+    bandizip='';
     notepadplusplus=''; 
     potplayer=''; 
     adobereader='--params="/UpdateMode:4"';
@@ -40,10 +40,19 @@ $packagesDev = @{
 
 # --- API Clients ---
     postman='';
-
+# --- Docker ---
+    'docker-desktop'='';
 # --- Cloud ---
     #'azure-cli'='';
     #'aws-vault'='';
+
+}
+
+$packagesGTN = @{
+# --- General ---
+    putty='';
+    'openvpn-connect'='';
+    winscp='';
 
 }
 # --------------------------------------------------------------
