@@ -5,14 +5,15 @@
 
 $packagesBasic = @{
 # --- Basics ---
-    bandizip='';
-    notepadplusplus=''; 
-    potplayer=''; 
-    adobereader='--params="/UpdateMode:4"';
+    '7zip'='';
+    vlc='';
+    lightshot='';
+    #adobereader='--params="/UpdateMode:4"';
     #foxitreader='--ia="/MERGETASKS=!desktopicon,!displayinbrowser /COMPONENTS=*pdfviewer,*ffse,*installprint,!ffaddin,*ffspellcheck,!connectedpdf.!installprint\wordaddin,!installprint\pptaddin,!installprint\exceladdin /DIR=D:\Programme\choco\foxitreader"';
 
 # --- Browsers ---
-    googlechrome='';
+    googlechrome='--params="/NoDesktopShortcut"';
+    brave='--params="/NoDesktopShortcut"';
     #firefox='--params="/l:de /NoDesktopShortcut /RemoveDistributionDir"';
     #opera='--params="/NoDesktopShortcut /NoTaskbarShortcut"';
 
@@ -21,8 +22,7 @@ $packagesBasic = @{
     #googledrive='';
 
 # --- Collaboration Tools ---
-    zoom='';    
-    'microsoft-teams'='';
+    #zoom='';    
     #discord='';
 
 # --- System administration ---
@@ -35,24 +35,33 @@ $packagesBasic = @{
 
 $packagesDev = @{
 # --- General ---
+    python='';
     vscode='--params="/NoDesktopIcon /NoQuicklaunchIcon"';
+    notepadplusplus='';
     git='';
-
+    anaconda3='';
+    'pycharm-community'='';
+    'intellijidea-community'='';
+    
 # --- API Clients ---
     postman='';
+    
 # --- Docker ---
     'docker-desktop'='';
+    
 # --- Cloud ---
     #'azure-cli'='';
     #'aws-vault'='';
+    terraform='';
 
 }
 
-$packagesGTN = @{
+$packagesWork = @{
 # --- General ---
     putty='';
     'openvpn-connect'='';
     winscp='';
+    'microsoft-teams'='';
 
 }
 # --------------------------------------------------------------
@@ -62,22 +71,26 @@ $packagesGTN = @{
 
 # --------------------- Script start ---------------------------
 Write-Host "`n --- The CHOCO WHITE PACKAGE --- " -ForegroundColor black -BackgroundColor white
-Write-Host "https://github.com/ShehanBrendon/ChocoWhitePackage `n" -ForegroundColor green
+Write-Host "https://github.com/iroshanvidanage/ChocoWhitePackage `n" -ForegroundColor green
 
 $Break = $False
 Do{
-    switch (Read-Host "Which apps should be installed? Enter 'b' for basic apps, 'v' for developer apps. If you want both, then run the
-script two times."){
+    switch (Read-Host "Which apps should be installed? Enter 'b' for basic apps, 'v' for developer apps, and 'w' for work related apps. If you want all, then run the
+script three times."){
     
     b { $packToInstall = $packagesBasic; $Break = $True}
     v { $packToInstall = $packagesDev; $Break = $True}
+    w { $packToInstall = $packagesWork; $Break = $True}
+    # a { $packToInstall = 'a'; $Break = $True}
     e { exit }
 
-    default {  Write-Host "Wrong input. Plase provide the character 'b' or 'v'. Select 'e' for exit." -ForegroundColor red  }
+    default {  Write-Host "Wrong input. Plase provide the character 'b' or 'v' or 'w'. Select 'e' for exit." -ForegroundColor red  }
     }
 } While ($Break -eq $False)
 
+# if ($packToInstall == 'a') {
 
+# }
 ForEach($key in $packToInstall.Keys){
     if ($packToInstall[$key]) {
         choco install $key -y $packToInstall[$key]   
