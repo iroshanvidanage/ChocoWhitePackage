@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "amazonwebservices.aws-toolkit-vscode",
+    "ms-vscode.cpptools",
+    "ms-azuretools.vscode-docker",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "hashicorp.terraform",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "kubescape.kubescape",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "redhat.vscode-yaml",
+    "ms-vscode-remote.remote-wsl",
+    "balamurugan.chidori",
+    "mazharm.goldsrc-theme",
+    "thisisroi.lumin",
+    "adpyke.codesnap",
+    "vscode-icons-team.vscode-icons",
+    "dbaeumer.vscode-eslint",
+    "ritwickdey.liveserver"
+  ]
+}
